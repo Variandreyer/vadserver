@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta chartset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+    <title>Loop List</title>
+    <link rel="stylesheet" href="sellitems.css">
+</head>
+<body>
+
+  <h2>Sell an Item</h2>
+  <form id="sellForm" novalidate>
+
+   
+    <div class="step active">
+      <label for="title">Item Title *</label>
+      <input type="text" id="title" name="title" required placeholder="Enter item title" />
+      <div class="error" id="titleError"></div>
+
+      <label for="category">Category *</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <optgroup label="Electronics">
+          <option value="smartphones">Smartphones</option>
+          <option value="laptops">Laptops</option>
+          <option value="headphones">Headphones</option>
+        </optgroup>
+        <optgroup label="Fashion">
+          <option value="mens-clothing">Men's Clothing</option>
+          <option value="womens-clothing">Women's Clothing</option>
+          <option value="shoes">Shoes</option>
+        </optgroup>
+        <optgroup label="Home & Garden">
+          <option value="furniture">Furniture</option>
+          <option value="kitchen">Kitchen</option>
+        </optgroup>
+      </select>
+      <div class="error" id="categoryError"></div>
+
+      <label for="brand">Brand *</label>
+      <select id="brand" name="brand" required>
+        <option value="">-- Select Brand --</option>
+        <optgroup label="Apple">
+          <option value="apple">Apple</option>
+        </optgroup>
+        <optgroup label="Samsung">
+          <option value="samsung">Samsung</option>
+        </optgroup>
+        <optgroup label="Nike">
+          <option value="nike">Nike</option>
+        </optgroup>
+        <optgroup label="Adidas">
+          <option value="adidas">Adidas</option>
+        </optgroup>
+        <optgroup label="IKEA">
+          <option value="ikea">IKEA</option>
+        </optgroup>
+      </select>
+      <div class="error" id="brandError"></div>
+    </div>
+
+  
+    <div class="step">
+      <label for="description">Description *</label>
+      <textarea id="description" name="description" required placeholder="Describe your item"></textarea>
+      <div class="error" id="descriptionError"></div>
+    </div>
+
+    
+    <div class="step">
+      <label for="price">Price (USD) *</label>
+      <input type="number" id="price" name="price" min="0" step="0.01" required placeholder="e.g., 99.99" />
+      <div class="error" id="priceError"></div>
+
+      <label for="shipping">Shipping Cost (USD) *</label>
+      <input type="number" id="shipping" name="shipping" min="0" step="0.01" required placeholder="e.g., 9.99" />
+      <div class="error" id="shippingError"></div>
+    </div>
+
+   
+    <div class="step">
+      <label for="photo">Upload Photo *</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required />
+      <div class="error" id="photoError"></div>
+      <img id="imgPreview" class="image-preview" alt="Image preview" style="display:none;" />
+    </div>
+
+    
+    <div class="step">
+      <h3>Review Your Listing</h3>
+      <div id="reviewContent"></div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" id="prevBtn" disabled>Back</button>
+      <button type="button" id="nextBtn">Next</button>
+      <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+    </div>
+
+  </form>
+<script src="sellitem.js"></script>
+</html>
+
+
